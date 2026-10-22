@@ -1,0 +1,6 @@
+{
+  "name": "E-Learning School",
+  "description": "Platform pembelajaran digital sekolah lengkap dengan quiz monitoring, camera answer, koreksi AI, tugas, materi, dan manajemen akademik.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

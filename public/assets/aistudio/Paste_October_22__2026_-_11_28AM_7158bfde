@@ -1,0 +1,1917 @@
+# MASTER PROMPT — FULL BUILD APLIKASI E-LEARNING SEKOLAH
+
+## 1. PERAN ANDA
+
+Anda bertindak sebagai:
+
+* Senior Full-Stack Engineer
+* Software Architect
+* UI/UX Designer
+* Frontend Engineer
+* Backend Engineer
+* Database Engineer
+* AI Engineer
+* Security Engineer
+* QA Engineer
+
+Tugas Anda adalah **MEMBANGUN APLIKASI E-LEARNING SEKOLAH SECARA UTUH DAN LANGSUNG JADI**, bukan sekadar membuat desain, prototype, mockup, atau contoh kode.
+
+Aplikasi harus dapat dijalankan, digunakan, diuji, dan dikembangkan lebih lanjut.
+
+---
+
+# 2. INSTRUKSI PALING PENTING
+
+## JANGAN MENGGUNAKAN SISTEM PER FASE
+
+Jangan membagi pembangunan aplikasi menjadi:
+
+* Phase 1
+* Phase 2
+* Phase 3
+* dan seterusnya.
+
+Jangan berhenti setelah membuat sebagian aplikasi dan meminta saya mengatakan "lanjut".
+
+**LANGSUNG IMPLEMENTASIKAN SELURUH FITUR YANG TERDAPAT DALAM PROMPT INI.**
+
+Semua modul harus dibuat dalam satu proses pembangunan:
+
+1. Design System
+2. Application Shell
+3. Authentication
+4. Role Management
+5. Dashboard
+6. Materi
+7. Tugas
+8. Quiz
+9. Camera Answer Input
+10. Quiz Monitoring
+11. Exit/Return Detection
+12. Nilai
+13. Progress
+14. Kalender
+15. Notifikasi
+16. Absensi
+17. Pengumuman
+18. AI Correction
+19. Activity Monitoring
+20. Admin Management
+21. Security
+22. Privacy
+23. Responsive Design
+24. Error Handling
+25. Loading State
+26. Empty State
+27. Database
+28. Backend/API
+29. Frontend
+30. Testing
+
+**JANGAN MEMBERIKAN IMPLEMENTASI SETENGAH JADI.**
+
+Jika ada bagian yang membutuhkan keputusan teknis, pilih solusi terbaik yang paling stabil dan langsung implementasikan.
+
+---
+
+# 3. TUJUAN APLIKASI
+
+Buat aplikasi bernama:
+
+# E-LEARNING SCHOOL
+
+Aplikasi merupakan platform pembelajaran digital untuk sekolah yang memungkinkan:
+
+* Guru membuat materi
+* Guru memberikan tugas
+* Guru membuat quiz
+* Siswa membaca materi
+* Siswa mengerjakan tugas
+* Siswa mengerjakan quiz
+* Siswa dapat memasukkan jawaban melalui kamera
+* Sistem mencatat aktivitas quiz
+* Sistem mendeteksi perubahan fokus/keluar dari halaman quiz
+* Sistem mencatat ketika siswa kembali ke quiz
+* Guru dapat melihat aktivitas quiz
+* Sistem membantu koreksi menggunakan AI
+* Guru tetap menjadi pengambil keputusan nilai
+* Siswa dapat melihat nilai dan perkembangan belajar
+* Admin mengelola seluruh sistem
+
+Aplikasi harus terlihat seperti produk EdTech modern, bukan dashboard CRUD sederhana.
+
+---
+
+# 4. TEKNOLOGI
+
+Gunakan teknologi modern yang paling sesuai dengan environment Google AI Studio.
+
+Prioritaskan:
+
+* React
+* TypeScript
+* Modern CSS / Tailwind CSS jika tersedia
+* Component-based architecture
+* REST API atau service layer yang jelas
+* Database terstruktur
+* Authentication
+* Secure API
+* Modular architecture
+
+Jika environment menyediakan Firebase atau layanan Google yang relevan, gunakan integrasi tersebut secara tepat.
+
+Jika suatu teknologi tidak tersedia, gunakan alternatif yang paling kompatibel dengan environment.
+
+**Jangan membuat dependency yang tidak dapat dijalankan.**
+
+---
+
+# 5. ROLE PENGGUNA
+
+Sistem memiliki tiga role utama:
+
+## ADMIN
+
+Admin dapat:
+
+* Melihat dashboard
+* Mengelola siswa
+* Mengelola guru
+* Mengelola kelas
+* Mengelola mata pelajaran
+* Mengelola tahun ajaran
+* Mengelola materi
+* Mengelola tugas
+* Mengelola quiz
+* Mengelola pengumuman
+* Melihat statistik
+* Melihat aktivitas sistem
+* Mengelola konfigurasi
+* Mengelola permission
+
+---
+
+## GURU
+
+Guru dapat:
+
+* Melihat dashboard
+* Membuat materi
+* Mengedit materi
+* Menghapus materi
+* Upload file materi
+* Membuat tugas
+* Menilai tugas
+* Membuat quiz
+* Mengatur waktu quiz
+* Mengatur durasi quiz
+* Mengatur jumlah percobaan
+* Mengacak soal
+* Mengacak pilihan jawaban
+* Melihat hasil quiz
+* Melihat aktivitas siswa
+* Melihat aktivitas tidak biasa
+* Melihat jawaban siswa
+* Menggunakan AI untuk membantu koreksi
+* Memberikan nilai manual
+* Memberikan feedback
+* Membuat pengumuman
+* Melihat absensi
+* Melihat progress siswa
+
+---
+
+## SISWA
+
+Siswa dapat:
+
+* Login
+* Melihat dashboard
+* Melihat materi
+* Membaca materi
+* Download materi
+* Mengumpulkan tugas
+* Melihat deadline
+* Mengerjakan quiz
+* Menjawab quiz
+* Menggunakan kamera untuk memasukkan jawaban
+* Melihat timer
+* Melihat progress quiz
+* Melanjutkan quiz setelah koneksi/keluar halaman
+* Melihat nilai
+* Melihat feedback
+* Melihat kalender
+* Melihat notifikasi
+* Melihat absensi
+* Melihat pengumuman
+* Melihat progress belajar
+
+---
+
+# 6. DESIGN SYSTEM
+
+Gunakan desain:
+
+* Modern
+* Clean
+* Professional
+* Academic
+* Minimal
+* Responsive
+* Accessible
+* Consistent
+
+Gunakan:
+
+* Sidebar
+* Top navigation
+* Card
+* Table
+* Modal
+* Drawer
+* Tabs
+* Dropdown
+* Badge
+* Tooltip
+* Toast
+* Alert
+* Progress bar
+* Skeleton loading
+
+Hindari desain yang terlalu ramai.
+
+Gunakan hierarchy visual yang jelas.
+
+---
+
+# 7. APPLICATION SHELL
+
+Semua halaman harus memiliki struktur UI yang konsisten.
+
+Desktop:
+
+Sidebar + Topbar + Main Content
+
+Mobile:
+
+Bottom navigation atau collapsible sidebar.
+
+Sidebar harus berubah sesuai role.
+
+---
+
+# 8. AUTHENTICATION
+
+Implementasikan:
+
+* Login
+* Logout
+* Session
+* Role-based access
+* Protected route
+* Password handling
+* Authentication state
+* Unauthorized page
+* Session expiration handling
+
+User tidak boleh mengakses halaman yang bukan hak aksesnya.
+
+Contoh:
+
+Siswa tidak boleh membuka:
+
+/admin
+
+atau:
+
+/teacher
+
+---
+
+# 9. DASHBOARD SISWA
+
+Dashboard siswa menampilkan:
+
+* Sapaan pengguna
+* Foto/avatar
+* Kelas
+* Mata pelajaran
+* Tugas mendatang
+* Quiz mendatang
+* Deadline terdekat
+* Nilai terbaru
+* Progress belajar
+* Kehadiran
+* Notifikasi
+* Pengumuman
+
+Tambahkan card:
+
+### Tugas Mendatang
+
+Menampilkan:
+
+* Nama tugas
+* Mata pelajaran
+* Deadline
+* Status
+
+### Quiz Mendatang
+
+Menampilkan:
+
+* Nama quiz
+* Mata pelajaran
+* Jadwal
+* Durasi
+* Status
+
+### Progress Belajar
+
+Tampilkan visual progress.
+
+---
+
+# 10. MATERI PEMBELAJARAN
+
+Guru dapat membuat materi.
+
+Materi memiliki:
+
+* Judul
+* Deskripsi
+* Mata pelajaran
+* Kelas
+* Bab
+* Konten
+* File
+* Link
+* Video
+* Lampiran
+* Status publikasi
+* Tanggal publikasi
+
+Siswa dapat:
+
+* Membuka materi
+* Membaca
+* Download
+* Menandai selesai
+
+Gunakan status:
+
+* Belum Dibaca
+* Sedang Dipelajari
+* Selesai
+
+---
+
+# 11. TUGAS
+
+Guru dapat membuat tugas.
+
+Field:
+
+* Judul
+* Deskripsi
+* Mata pelajaran
+* Kelas
+* Deadline
+* Attachment
+* Instruksi
+* Status
+
+Siswa dapat:
+
+* Membuka tugas
+* Membaca instruksi
+* Upload jawaban
+* Menulis jawaban
+* Mengirim tugas
+* Melihat status
+* Melihat nilai
+* Melihat feedback
+
+Status:
+
+* Belum Dikerjakan
+* Sedang Dikerjakan
+* Sudah Dikumpulkan
+* Terlambat
+* Dinilai
+
+---
+
+# 12. QUIZ
+
+Buat sistem quiz lengkap.
+
+Quiz memiliki:
+
+* Judul
+* Deskripsi
+* Mata pelajaran
+* Kelas
+* Durasi
+* Waktu mulai
+* Waktu selesai
+* Jumlah soal
+* Passing grade
+* Random question
+* Random option
+* Attempt limit
+* Status
+
+Jenis soal:
+
+1. Pilihan Ganda
+2. Multiple Choice
+3. True/False
+4. Short Answer
+5. Essay
+6. Jawaban Foto
+7. Text + Photo
+
+---
+
+# 13. QUIZ INTERFACE SISWA
+
+Saat quiz dimulai tampilkan:
+
+* Nama quiz
+* Timer
+* Progress
+* Nomor soal
+* Pertanyaan
+* Pilihan jawaban
+* Tombol sebelumnya
+* Tombol berikutnya
+* Navigasi nomor soal
+* Autosave
+* Submit
+
+Tambahkan indikator:
+
+* Belum dijawab
+* Sudah dijawab
+* Sedang aktif
+
+---
+
+# 14. TIMER QUIZ
+
+Timer harus berjalan secara akurat.
+
+Jika waktu habis:
+
+* Quiz otomatis submit
+* Jawaban yang sudah tersimpan tidak hilang
+* Status menjadi `QUIZ_TIMEOUT`
+
+Timer tidak boleh hanya bergantung pada frontend.
+
+Gunakan waktu server jika tersedia.
+
+---
+
+# 15. AUTOSAVE
+
+Jawaban harus otomatis disimpan.
+
+Simpan:
+
+* quiz_id
+* student_id
+* question_id
+* answer
+* timestamp
+
+Jika koneksi terputus:
+
+* Jawaban lokal tetap dipertahankan
+* Sistem mencoba sinkronisasi kembali
+* Tampilkan status koneksi
+
+Contoh:
+
+"Jawaban tersimpan"
+
+atau:
+
+"Menunggu koneksi..."
+
+---
+
+# 16. RESUME QUIZ
+
+Jika siswa:
+
+* refresh
+* koneksi terputus
+* keluar halaman
+* kembali ke halaman quiz
+
+Sistem harus mempertahankan:
+
+* jawaban
+* timer
+* progress
+* soal aktif
+* status quiz
+
+Jangan mengacak ulang soal ketika siswa melakukan refresh atau kembali ke quiz yang sedang berlangsung.
+
+---
+
+# 17. CAMERA ANSWER INPUT
+
+Tambahkan fitur input jawaban menggunakan kamera.
+
+Siswa dapat memilih metode:
+
+### Tulis Jawaban
+
+atau
+
+### Upload Foto
+
+atau
+
+### Gunakan Kamera
+
+Kamera digunakan terutama untuk:
+
+* jawaban tulisan tangan
+* perhitungan matematika
+* diagram
+* grafik
+* rumus
+* jawaban fisika
+* jawaban kimia
+* pekerjaan di kertas
+
+---
+
+# 18. CAMERA UI
+
+Ketika kamera dibuka:
+
+Tampilkan:
+
+* Camera preview
+* Tombol Capture
+* Tombol Retake
+* Tombol Confirm
+* Tombol Cancel
+
+Flow:
+
+Camera Open
+
+→ Preview
+
+→ Capture
+
+→ Review
+
+→ Retake / Confirm
+
+Jika Confirm:
+
+→ Upload
+
+→ Simpan sebagai jawaban
+
+Jika Cancel:
+
+→ kembali ke quiz.
+
+---
+
+# 19. CAMERA PERMISSION
+
+Browser harus meminta permission kamera secara normal.
+
+Jika permission ditolak:
+
+Tampilkan:
+
+"Kamera tidak dapat digunakan."
+
+Kemudian berikan alternatif:
+
+* Upload foto
+* Tulis jawaban
+
+Jangan membuat aplikasi rusak jika kamera tidak tersedia.
+
+---
+
+# 20. PRIVACY CAMERA
+
+Jangan melakukan:
+
+* continuous recording
+* background recording
+* face recognition
+* penyimpanan video tanpa kebutuhan
+* mengambil foto tanpa persetujuan
+
+Kamera hanya aktif ketika siswa secara eksplisit memilih fitur kamera.
+
+---
+
+# 21. AI/OCR JAWABAN FOTO
+
+Jika environment mendukung AI/OCR:
+
+Gunakan AI untuk membantu:
+
+* membaca tulisan
+* mengenali rumus
+* membaca angka
+* membaca diagram
+* memberikan rekomendasi koreksi
+
+Tetapi:
+
+**AI TIDAK BOLEH MENJADI PENENTU NILAI FINAL SECARA OTOMATIS.**
+
+Guru tetap memiliki kontrol nilai.
+
+AI hanya:
+
+* Recommendation
+* Suggested score
+* Suggested feedback
+* Detected answer
+
+---
+
+# 22. DETEKSI KELUAR DARI QUIZ
+
+Implementasikan sistem monitoring aktivitas quiz.
+
+Gunakan browser event yang tersedia seperti:
+
+* visibilitychange
+* focus
+* blur
+* page lifecycle events
+
+Jika siswa meninggalkan halaman quiz:
+
+catat:
+
+`QUIZ_EXIT`
+
+Ketika siswa kembali:
+
+catat:
+
+`QUIZ_RETURN`
+
+---
+
+# 23. DATA AKTIVITAS QUIZ
+
+Simpan:
+
+* student_id
+* quiz_id
+* question_id
+* event_type
+* timestamp
+* duration
+* browser/session information jika tersedia secara aman
+
+Event:
+
+* QUIZ_START
+* QUIZ_EXIT
+* QUIZ_RETURN
+* QUESTION_VIEW
+* QUESTION_ANSWER
+* ANSWER_AUTOSAVE
+* CAMERA_OPEN
+* CAMERA_CAPTURE
+* CAMERA_CONFIRM
+* CAMERA_CANCEL
+* QUIZ_SUBMIT
+* QUIZ_TIMEOUT
+* CONNECTION_LOST
+* CONNECTION_RESTORED
+
+---
+
+# 24. JANGAN LANGSUNG MENYEBUT CURANG
+
+Sangat penting:
+
+Jika siswa keluar dari halaman quiz, jangan otomatis mengatakan:
+
+"Anda curang."
+
+Gunakan istilah:
+
+* Aktivitas Tidak Biasa
+* Perubahan Fokus Halaman
+* Perlu Diperhatikan
+* Indikasi Aktivitas Tidak Biasa
+
+Karena perubahan fokus dapat terjadi akibat:
+
+* Notifikasi
+* Koneksi
+* Kesalahan klik
+* Browser
+* Membuka kamera
+* Gangguan teknis
+
+---
+
+# 25. CAMERA TIDAK BOLEH DIANGGAP SEBAGAI QUIZ EXIT
+
+Ketika siswa menggunakan kamera:
+
+`CAMERA_OPEN`
+
+`CAMERA_CAPTURE`
+
+`CAMERA_CONFIRM`
+
+`CAMERA_CANCEL`
+
+harus dipisahkan dari aktivitas `QUIZ_EXIT`.
+
+Jangan membuat sistem salah mendeteksi penggunaan kamera sebagai kecurangan.
+
+Jika browser memang menyebabkan perubahan fokus saat kamera dibuka, tandai sebagai:
+
+"Perubahan fokus terkait penggunaan kamera"
+
+jika informasi tersebut dapat diketahui secara teknis.
+
+---
+
+# 26. QUIZ ACTIVITY MONITORING UNTUK GURU
+
+Guru memiliki halaman:
+
+# Aktivitas Quiz
+
+Tampilkan:
+
+* Nama siswa
+* Quiz
+* Waktu mulai
+* Waktu selesai
+* Jumlah keluar halaman
+* Jumlah kembali
+* Total durasi keluar
+* Durasi terlama
+* Aktivitas kamera
+* Connection lost
+* Connection restored
+* Status aktivitas
+
+Contoh status:
+
+### Normal
+
+Aktivitas wajar.
+
+### Perlu Diperhatikan
+
+Terdapat beberapa perubahan fokus.
+
+### Risiko Tinggi
+
+Terdapat pola aktivitas tidak biasa berdasarkan aturan yang dikonfigurasi.
+
+Tetapi jangan menyatakan siswa pasti melakukan kecurangan.
+
+---
+
+# 27. ACTIVITY TIMELINE
+
+Guru dapat membuka detail seorang siswa.
+
+Tampilkan timeline:
+
+09:00 Quiz Start
+
+09:05 Question 1 Answered
+
+09:08 Question 2 Answered
+
+09:10 Camera Open
+
+09:11 Camera Confirm
+
+09:15 Quiz Exit
+
+09:16 Quiz Return
+
+09:20 Quiz Submit
+
+Gunakan timeline UI yang mudah dibaca.
+
+---
+
+# 28. THRESHOLD AKTIVITAS
+
+Guru/Admin dapat mengatur threshold.
+
+Contoh:
+
+* Exit > 3 kali
+* Total exit duration > 2 menit
+* Longest exit > 60 detik
+
+Jika threshold terlampaui:
+
+Status menjadi:
+
+"Perlu Diperhatikan"
+
+Jangan otomatis memberikan hukuman.
+
+---
+
+# 29. CONNECTION HANDLING
+
+Jika koneksi hilang:
+
+Tampilkan banner:
+
+"Koneksi terputus. Jawaban akan disimpan dan disinkronkan ketika koneksi kembali."
+
+Ketika koneksi kembali:
+
+" koneksi kembali. Jawaban berhasil disinkronkan."
+
+Catat:
+
+`CONNECTION_LOST`
+
+`CONNECTION_RESTORED`
+
+Jangan menghapus jawaban.
+
+---
+
+# 30. NILAI
+
+Sistem nilai harus mendukung:
+
+* Nilai tugas
+* Nilai quiz
+* Nilai akhir
+* Feedback
+* Status penilaian
+
+Guru dapat:
+
+* mengubah nilai
+* memberikan komentar
+* memberikan feedback
+* melihat jawaban siswa
+
+---
+
+# 31. AI CORRECTION
+
+AI dapat membantu guru melakukan koreksi.
+
+AI dapat menganalisis:
+
+* jawaban essay
+* jawaban singkat
+* jawaban foto
+* jawaban tulisan tangan jika OCR tersedia
+
+AI menghasilkan:
+
+* Suggested score
+* Reasoning summary
+* Suggested feedback
+* Possible mistakes
+
+Tetapi:
+
+**GURU HARUS DAPAT MENGUBAH HASIL AI.**
+
+Nilai final ditentukan guru.
+
+---
+
+# 32. PROGRESS SISWA
+
+Tampilkan:
+
+* Persentase materi selesai
+* Tugas selesai
+* Quiz selesai
+* Rata-rata nilai
+* Kehadiran
+* Progress mata pelajaran
+
+Gunakan grafik yang mudah dibaca.
+
+---
+
+# 33. KALENDER
+
+Kalender menampilkan:
+
+* Jadwal tugas
+* Deadline
+* Quiz
+* Pengumuman
+* Kegiatan pembelajaran
+
+Gunakan:
+
+* Month view
+* Week view
+* Day view jika diperlukan
+
+Klik event untuk melihat detail.
+
+---
+
+# 34. NOTIFIKASI
+
+Buat sistem notifikasi.
+
+Jenis:
+
+* Tugas baru
+* Deadline tugas
+* Quiz baru
+* Quiz dimulai
+* Nilai tersedia
+* Feedback guru
+* Pengumuman
+* Sistem
+
+Gunakan:
+
+* unread count
+* mark as read
+* mark all as read
+
+---
+
+# 35. ABSENSI
+
+Guru dapat:
+
+* Membuat absensi
+* Membuka absensi
+* Melihat siswa hadir
+* Melihat siswa tidak hadir
+
+Siswa dapat:
+
+* Melihat status kehadiran
+
+Dashboard menampilkan persentase kehadiran.
+
+---
+
+# 36. PENGUMUMAN
+
+Guru/Admin dapat membuat:
+
+* Judul
+* Isi
+* Target kelas
+* Target mata pelajaran
+* Waktu publikasi
+
+Siswa dapat melihat pengumuman.
+
+---
+
+# 37. ADMIN DASHBOARD
+
+Dashboard admin menampilkan:
+
+* Total siswa
+* Total guru
+* Total kelas
+* Total materi
+* Total tugas
+* Total quiz
+* Aktivitas sistem
+* Statistik pembelajaran
+
+Gunakan chart dan statistic card.
+
+---
+
+# 38. USER MANAGEMENT
+
+Admin dapat:
+
+* Create user
+* Edit user
+* Delete/deactivate user
+* Reset password
+* Assign role
+* Assign class
+
+Gunakan confirmation dialog sebelum destructive action.
+
+---
+
+# 39. CLASS MANAGEMENT
+
+Admin dapat membuat:
+
+* Kelas
+* Tahun ajaran
+* Wali kelas
+* Mata pelajaran
+
+Relasikan:
+
+User → Class → Subject → Material/Task/Quiz.
+
+---
+
+# 40. SEARCH & FILTER
+
+Tambahkan search dan filter di halaman yang relevan.
+
+Contoh:
+
+Search:
+
+* Nama
+* Judul
+* Mata pelajaran
+
+Filter:
+
+* Kelas
+* Status
+* Tanggal
+* Mata pelajaran
+* Role
+
+---
+
+# 41. DATABASE
+
+Buat struktur database yang jelas.
+
+Minimal entity:
+
+* users
+* roles
+* classes
+* subjects
+* materials
+* material_progress
+* assignments
+* assignment_submissions
+* quizzes
+* quiz_questions
+* quiz_options
+* quiz_attempts
+* quiz_answers
+* quiz_activity_logs
+* camera_answer_submissions
+* grades
+* feedback
+* notifications
+* announcements
+* attendance
+* calendar_events
+* ai_corrections
+
+Relasi antar entity harus jelas.
+
+---
+
+# 42. SECURITY
+
+Implementasikan:
+
+* Authentication
+* Authorization
+* Role-based access
+* Input validation
+* Server-side validation
+* Secure API
+* Permission checking
+* Data isolation
+* Error handling
+
+Siswa hanya boleh melihat datanya sendiri.
+
+Guru hanya boleh mengelola kelas/data yang menjadi kewenangannya.
+
+Admin memiliki akses sistem sesuai permission.
+
+---
+
+# 43. PRIVACY
+
+Jangan mengumpulkan data yang tidak diperlukan.
+
+Untuk quiz monitoring:
+
+Simpan event yang diperlukan saja.
+
+Jangan melakukan:
+
+* hidden camera
+* continuous recording
+* automatic face recognition
+* background surveillance
+
+Quiz monitoring harus dijelaskan kepada pengguna.
+
+---
+
+# 44. ACCESSIBILITY
+
+Pastikan:
+
+* keyboard accessible
+* focus state jelas
+* contrast cukup
+* semantic HTML
+* label form jelas
+* error message jelas
+* tombol memiliki nama yang jelas
+
+---
+
+# 45. RESPONSIVE
+
+Aplikasi harus bekerja pada:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile
+
+Quiz harus tetap nyaman digunakan pada mobile.
+
+Camera input harus mendukung mobile browser jika tersedia.
+
+---
+
+# 46. LOADING STATE
+
+Setiap proses async harus memiliki loading state.
+
+Contoh:
+
+* Skeleton
+* Spinner
+* Loading button
+
+Jangan membuat user mengira aplikasi tidak bekerja.
+
+---
+
+# 47. EMPTY STATE
+
+Jika belum ada data:
+
+Tampilkan empty state informatif.
+
+Contoh:
+
+"Belum ada tugas."
+
+"Belum ada quiz."
+
+"Belum ada materi."
+
+---
+
+# 48. ERROR STATE
+
+Jika terjadi error:
+
+Tampilkan pesan yang manusiawi.
+
+Jangan menampilkan stack trace kepada user.
+
+Contoh:
+
+"Terjadi masalah saat memuat data. Silakan coba lagi."
+
+Sediakan tombol:
+
+"Try Again"
+
+---
+
+# 49. MICRO INTERACTION
+
+Tambahkan interaksi kecil:
+
+* Hover
+* Transition
+* Toast
+* Modal animation
+* Button feedback
+* Progress animation
+
+Jangan berlebihan.
+
+---
+
+# 50. DATA CONSISTENCY
+
+Pastikan status konsisten di seluruh aplikasi.
+
+Contoh status tugas:
+
+* Belum Dikerjakan
+* Sedang Dikerjakan
+* Sudah Dikumpulkan
+* Terlambat
+* Dinilai
+
+Status quiz:
+
+* Belum Dimulai
+* Sedang Berlangsung
+* Selesai
+* Timeout
+
+Status notifikasi:
+
+* Read
+* Unread
+
+---
+
+# 51. QUIZ STATE MACHINE
+
+Gunakan state yang jelas:
+
+`NOT_STARTED`
+
+→ `IN_PROGRESS`
+
+→ `SUBMITTED`
+
+atau:
+
+`IN_PROGRESS`
+
+→ `TIMEOUT`
+
+atau:
+
+`IN_PROGRESS`
+
+→ `INTERRUPTED`
+
+→ `RESUMED`
+
+Pastikan state tidak saling bertentangan.
+
+---
+
+# 52. API
+
+Buat service/API layer yang terstruktur.
+
+Contoh:
+
+Authentication:
+
+* login
+* logout
+* session
+
+Materials:
+
+* list
+* detail
+* create
+* update
+* delete
+
+Assignments:
+
+* list
+* detail
+* submit
+* grade
+
+Quiz:
+
+* list
+* detail
+* start
+* answer
+* autosave
+* submit
+* activity log
+* resume
+
+Camera:
+
+* upload answer
+* save photo
+* replace photo
+
+Grades:
+
+* list
+* detail
+* update
+
+Notifications:
+
+* list
+* mark read
+
+---
+
+# 53. COMPONENT ARCHITECTURE
+
+Gunakan reusable components.
+
+Contoh:
+
+* Button
+* Input
+* Select
+* Modal
+* Drawer
+* Card
+* Table
+* Badge
+* Avatar
+* Toast
+* Dialog
+* DatePicker
+* FileUpload
+* CameraCapture
+* QuizTimer
+* QuizNavigation
+* ProgressBar
+* ActivityTimeline
+* NotificationItem
+* EmptyState
+* ErrorState
+* LoadingState
+
+Jangan mengulang kode yang sama jika dapat dibuat reusable.
+
+---
+
+# 54. FILE STRUCTURE
+
+Gunakan struktur project yang bersih.
+
+Contoh:
+
+src/
+
+components/
+
+pages/
+
+layouts/
+
+features/
+
+services/
+
+hooks/
+
+utils/
+
+types/
+
+lib/
+
+api/
+
+auth/
+
+quiz/
+
+materials/
+
+assignments/
+
+grades/
+
+notifications/
+
+admin/
+
+teacher/
+
+student/
+
+Gunakan struktur yang sesuai dengan framework yang dipilih.
+
+---
+
+# 55. SEED DATA / DEMO DATA
+
+Sediakan data demo agar aplikasi langsung dapat diuji.
+
+Contoh akun:
+
+Admin
+
+Guru
+
+Siswa
+
+Buat beberapa:
+
+* kelas
+* mata pelajaran
+* materi
+* tugas
+* quiz
+* soal
+* notifikasi
+* pengumuman
+
+Jika sistem mendukung seed database, implementasikan seed.
+
+---
+
+# 56. DEMO QUIZ
+
+Sediakan minimal satu quiz demo yang memiliki:
+
+* Pilihan ganda
+* Essay
+* Jawaban foto
+* Timer
+* Autosave
+* Activity tracking
+* Camera input
+* Exit detection
+* Resume
+
+Pastikan fitur dapat diuji secara nyata.
+
+---
+
+# 57. TESTING
+
+Setelah implementasi selesai, lakukan pengecekan terhadap:
+
+### Authentication
+
+* Login
+* Logout
+* Role
+
+### Student
+
+* Dashboard
+* Material
+* Assignment
+* Quiz
+* Camera
+* Submit
+* Grade
+* Notification
+
+### Teacher
+
+* Material
+* Assignment
+* Quiz
+* Grade
+* Activity monitoring
+* AI correction
+
+### Admin
+
+* User
+* Class
+* Subject
+* System management
+
+### Quiz
+
+* Timer
+* Autosave
+* Resume
+* Exit
+* Return
+* Camera
+* Submit
+* Timeout
+* Connection lost
+
+---
+
+# 58. JANGAN MEMBUAT FITUR PALSU
+
+Jika sebuah fitur tidak dapat benar-benar dilakukan karena keterbatasan browser atau environment:
+
+Jangan berpura-pura fitur tersebut bekerja.
+
+Implementasikan kemampuan terbaik yang tersedia.
+
+Berikan fallback yang aman.
+
+Contoh:
+
+Jika browser tidak memungkinkan deteksi tertentu:
+
+Gunakan:
+
+"Perubahan fokus halaman terdeteksi"
+
+bukan:
+
+"Siswa pasti membuka aplikasi lain."
+
+---
+
+# 59. ANTI-CHEATING HARUS REALISTIS
+
+Sistem tidak boleh mengklaim dapat mendeteksi kecurangan secara sempurna.
+
+Sistem hanya mendeteksi:
+
+* perubahan visibility
+* kehilangan focus
+* kembali ke halaman
+* pola aktivitas
+* waktu keluar
+* aktivitas kamera
+* koneksi
+
+Guru tetap melakukan penilaian akhir.
+
+---
+
+# 60. UI COPY
+
+Gunakan Bahasa Indonesia untuk interface.
+
+Contoh:
+
+* Dashboard
+* Materi
+* Tugas
+* Quiz
+* Nilai
+* Kalender
+* Notifikasi
+* Absensi
+* Pengumuman
+* Profil
+* Pengaturan
+
+Gunakan bahasa yang natural dan profesional.
+
+---
+
+# 61. UX QUIZ
+
+Ketika siswa mulai quiz:
+
+Tampilkan confirmation:
+
+"Anda akan memulai quiz."
+
+Informasi:
+
+* Durasi
+* Jumlah soal
+* Kesempatan
+* Waktu
+
+Setelah mulai:
+
+Masuk ke fullscreen-like focused experience jika memungkinkan, tetapi jangan memaksa fitur browser yang tidak tersedia.
+
+---
+
+# 62. SUBMIT QUIZ
+
+Sebelum submit:
+
+Tampilkan:
+
+"Apakah Anda yakin ingin mengumpulkan quiz?"
+
+Informasi:
+
+* Soal terjawab
+* Soal belum dijawab
+* Waktu tersisa
+
+Setelah submit:
+
+* Kunci quiz
+* Simpan jawaban
+* Simpan aktivitas
+* Hitung nilai jika objektif
+* Tampilkan status
+
+---
+
+# 63. AFTER QUIZ
+
+Siswa dapat melihat:
+
+* Status
+* Nilai jika sudah dirilis
+* Feedback
+* Jumlah benar/salah jika diizinkan guru
+
+Guru dapat melihat:
+
+* Semua submission
+* Jawaban
+* Nilai
+* Aktivitas
+* AI recommendation
+
+---
+
+# 64. NOTIFICATION TRIGGER
+
+Buat trigger notifikasi untuk:
+
+Assignment created
+
+Assignment deadline approaching
+
+Quiz created
+
+Quiz starting
+
+Grade released
+
+Feedback added
+
+Announcement published
+
+Quiz activity threshold exceeded
+
+---
+
+# 65. PERFORMANCE
+
+Optimalkan:
+
+* Lazy loading
+* Pagination
+* Debounce search
+* Image optimization
+* API caching jika sesuai
+* Minimal unnecessary re-render
+* Efficient database query
+
+---
+
+# 66. ERROR RECOVERY
+
+Jika API gagal:
+
+Jangan kehilangan jawaban.
+
+Jika autosave gagal:
+
+Simpan sementara secara lokal jika memungkinkan.
+
+Jika koneksi kembali:
+
+Sinkronkan.
+
+Tampilkan status kepada siswa.
+
+---
+
+# 67. FINAL QUALITY REQUIREMENT
+
+Aplikasi harus terasa seperti:
+
+**produk E-Learning sekolah yang benar-benar siap digunakan.**
+
+Bukan:
+
+* prototype
+* mockup
+* landing page
+* static dashboard
+* kumpulan halaman tanpa backend
+* kumpulan component tanpa integrasi
+
+Semua fitur harus terhubung.
+
+---
+
+# 68. INTEGRASI ANTAR MODUL
+
+Pastikan semua modul saling terhubung.
+
+Contoh:
+
+Guru membuat quiz
+
+↓
+
+Quiz muncul di dashboard siswa
+
+↓
+
+Siswa mengerjakan
+
+↓
+
+Jawaban autosave
+
+↓
+
+Aktivitas dicatat
+
+↓
+
+Siswa menggunakan kamera
+
+↓
+
+Jawaban foto tersimpan
+
+↓
+
+Siswa keluar halaman
+
+↓
+
+QUIZ_EXIT dicatat
+
+↓
+
+Siswa kembali
+
+↓
+
+QUIZ_RETURN dicatat
+
+↓
+
+Siswa submit
+
+↓
+
+Nilai dihitung
+
+↓
+
+Guru melihat submission
+
+↓
+
+AI membantu koreksi
+
+↓
+
+Guru menetapkan nilai final
+
+↓
+
+Siswa mendapat notifikasi nilai
+
+↓
+
+Progress siswa diperbarui
+
+---
+
+# 69. JANGAN BERHENTI DI TENGAH
+
+Ini merupakan instruksi penting.
+
+**Jangan berhenti setelah membuat UI.**
+
+**Jangan berhenti setelah membuat frontend.**
+
+**Jangan berhenti setelah membuat database.**
+
+**Jangan berhenti setelah membuat authentication.**
+
+**Jangan meminta saya mengetik "lanjut".**
+
+**Jangan mengatakan "fase berikutnya dapat dilanjutkan".**
+
+**Jangan hanya memberikan roadmap.**
+
+**LANGSUNG SELESAIKAN SELURUH IMPLEMENTASI.**
+
+Jika output terlalu panjang, prioritaskan pembuatan file/code yang benar-benar dibutuhkan dan lanjutkan implementasi seluruh sistem dalam konteks yang tersedia.
+
+---
+
+# 70. SELF-CHECK SEBELUM SELESAI
+
+Sebelum menyatakan aplikasi selesai, periksa:
+
+* Apakah semua role tersedia?
+* Apakah authentication bekerja?
+* Apakah routing bekerja?
+* Apakah database terhubung?
+* Apakah CRUD bekerja?
+* Apakah dashboard bekerja?
+* Apakah materi bekerja?
+* Apakah tugas bekerja?
+* Apakah quiz bekerja?
+* Apakah timer bekerja?
+* Apakah autosave bekerja?
+* Apakah resume bekerja?
+* Apakah camera input bekerja?
+* Apakah photo answer tersimpan?
+* Apakah quiz exit tercatat?
+* Apakah quiz return tercatat?
+* Apakah camera event tidak dianggap sebagai cheating?
+* Apakah activity timeline tersedia?
+* Apakah AI correction tersedia?
+* Apakah guru dapat mengubah hasil AI?
+* Apakah nilai bekerja?
+* Apakah notifikasi bekerja?
+* Apakah kalender bekerja?
+* Apakah absensi bekerja?
+* Apakah pengumuman bekerja?
+* Apakah admin management bekerja?
+* Apakah responsive?
+* Apakah error state tersedia?
+* Apakah loading state tersedia?
+* Apakah empty state tersedia?
+* Apakah security diterapkan?
+* Apakah privacy diterapkan?
+
+Jika ada yang belum, **implementasikan sebelum menyatakan selesai.**
+
+---
+
+# 71. OUTPUT YANG DIHARAPKAN
+
+Jangan hanya memberikan penjelasan.
+
+Buat implementasi aplikasi secara nyata.
+
+Output akhir harus mencakup:
+
+1. Source code
+2. Struktur project
+3. Frontend
+4. Backend/service
+5. Database/schema
+6. Authentication
+7. Role management
+8. Semua halaman
+9. Semua component
+10. Semua fitur
+11. Seed/demo data
+12. Error handling
+13. Security
+14. Responsive UI
+15. Quiz monitoring
+16. Camera answer input
+17. AI correction
+18. Testing
+
+Setelah seluruh implementasi selesai, berikan ringkasan singkat:
+
+* Teknologi yang digunakan
+* Struktur aplikasi
+* Fitur yang berhasil dibuat
+* Cara menjalankan
+* Akun demo
+* Catatan keterbatasan teknis
+
+**Tetapi jangan mengganti implementasi dengan penjelasan.**
+
+# FINAL COMMAND
+
+**BUILD THE COMPLETE E-LEARNING SCHOOL APPLICATION NOW.**
+
+Jangan gunakan pendekatan per fase.
+
+Jangan menunggu instruksi lanjutan.
+
+Jangan meminta konfirmasi.
+
+Jangan berhenti setelah membuat sebagian fitur.
+
+**Implementasikan seluruh aplikasi dari awal sampai selesai berdasarkan seluruh spesifikasi di atas.**
